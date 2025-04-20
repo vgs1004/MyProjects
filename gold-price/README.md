@@ -34,6 +34,14 @@ The dataset used in this project is `gold_price.csv`, which contains daily gold 
 - Created input sequences for the LSTM model.
 - Trained an LSTM model with two layers and forecasted the next 30 days.
 - Visualized LSTM results alongside the original series.
+-  LSTM: Long Short-Term Memory Networks
+-  LSTM is a special kind of Recurrent Neural Network (RNN) capable of learning long-term dependencies in time series data. Unlike ARIMA, it can capture non-linear and complex patterns in data.
+-  LSTM layers have memory cells that preserve information over time.
+-  Useful when traditional models like ARIMA fall short, especially in chaotic or seasonal data.
+-  Requires more data and computation than ARIMA, but potentially gives better forecasts in complex scenarios.
+-  Why LSTM?
+-  Can handle non-stationary, non-linear, and multi-dimensional time series.
+-  Useful for deep learning-based predictions that adapt to sudden shifts or unknown trends.
 
 ## Results
 Both ARIMA and LSTM provide forecasts for the next 30 days. The plots help compare the effectiveness of each approach in capturing gold price trends.
