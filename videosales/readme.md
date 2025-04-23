@@ -8,10 +8,6 @@ This project is a comprehensive **Video Game Sales Dashboard** created using Pow
 
 📦 VideoGameSalesDashboard ┣ 📊 Dashboard.pbix ┣ 📄 README.md ┗ 📈 VideoGameSalesData.xlsx
 
-yaml
-Always show details
-
-Copy
 
 ---
 
