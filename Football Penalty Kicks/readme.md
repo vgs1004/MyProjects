@@ -1,6 +1,3 @@
-Here is a comprehensive, production-ready **README.md** file tailored exactly to your **"Football Penalty Kicks"** project.
-
-Regarding your question about removing unnecessary files: **Keep all your Python files!** Your project includes a rigorous econometric estimation phase using **`Biogeme`** and an interactive, real-time prediction interface built with **`Streamlit`**. Both are crucial parts of the pipeline and should be committed to your repository.
 
 ---
 
