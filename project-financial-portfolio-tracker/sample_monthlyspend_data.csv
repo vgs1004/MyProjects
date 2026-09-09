@@ -1,0 +1,105 @@
+ProjectID,ProjectName,Month,ActualSpendThatMonth
+PRJ-001,Core Banking Migration,2025-04-01 00:00:00,58250
+PRJ-001,Core Banking Migration,2025-05-01 00:00:00,44120
+PRJ-001,Core Banking Migration,2025-06-01 00:00:00,38360
+PRJ-001,Core Banking Migration,2025-07-01 00:00:00,32460
+PRJ-002,Claims Automation,2025-01-01 00:00:00,28440
+PRJ-002,Claims Automation,2025-02-01 00:00:00,36630
+PRJ-002,Claims Automation,2025-03-01 00:00:00,17460
+PRJ-002,Claims Automation,2025-04-01 00:00:00,40700
+PRJ-002,Claims Automation,2025-05-01 00:00:00,19480
+PRJ-002,Claims Automation,2025-06-01 00:00:00,34320
+PRJ-002,Claims Automation,2025-07-01 00:00:00,21270
+PRJ-002,Claims Automation,2025-08-01 00:00:00,35450
+PRJ-002,Claims Automation,2025-09-01 00:00:00,43900
+PRJ-002,Claims Automation,2025-10-01 00:00:00,26560
+PRJ-003,Data Warehouse Modernization,2025-05-01 00:00:00,183090
+PRJ-003,Data Warehouse Modernization,2025-06-01 00:00:00,170240
+PRJ-003,Data Warehouse Modernization,2025-07-01 00:00:00,117690
+PRJ-003,Data Warehouse Modernization,2025-08-01 00:00:00,172090
+PRJ-004,Customer Portal Revamp,2025-04-01 00:00:00,58880
+PRJ-004,Customer Portal Revamp,2025-05-01 00:00:00,67360
+PRJ-004,Customer Portal Revamp,2025-06-01 00:00:00,84540
+PRJ-004,Customer Portal Revamp,2025-07-01 00:00:00,62140
+PRJ-004,Customer Portal Revamp,2025-08-01 00:00:00,71490
+PRJ-004,Customer Portal Revamp,2025-09-01 00:00:00,55890
+PRJ-005,Regulatory Reporting Upgrade,2025-05-01 00:00:00,59880
+PRJ-005,Regulatory Reporting Upgrade,2025-06-01 00:00:00,25120
+PRJ-005,Regulatory Reporting Upgrade,2025-07-01 00:00:00,58140
+PRJ-005,Regulatory Reporting Upgrade,2025-08-01 00:00:00,29860
+PRJ-005,Regulatory Reporting Upgrade,2025-09-01 00:00:00,56420
+PRJ-005,Regulatory Reporting Upgrade,2025-10-01 00:00:00,23940
+PRJ-005,Regulatory Reporting Upgrade,2025-11-01 00:00:00,31640
+PRJ-006,ERP Rollout,2025-05-01 00:00:00,81710
+PRJ-006,ERP Rollout,2025-06-01 00:00:00,39610
+PRJ-006,ERP Rollout,2025-07-01 00:00:00,72980
+PRJ-006,ERP Rollout,2025-08-01 00:00:00,76700
+PRJ-006,ERP Rollout,2025-09-01 00:00:00,78440
+PRJ-006,ERP Rollout,2025-10-01 00:00:00,68350
+PRJ-006,ERP Rollout,2025-11-01 00:00:00,84040
+PRJ-006,ERP Rollout,2025-12-01 00:00:00,52650
+PRJ-006,ERP Rollout,2026-01-01 00:00:00,60250
+PRJ-006,ERP Rollout,2026-02-01 00:00:00,58980
+PRJ-007,Payments Platform Refresh,2025-02-01 00:00:00,22880
+PRJ-007,Payments Platform Refresh,2025-03-01 00:00:00,19020
+PRJ-007,Payments Platform Refresh,2025-04-01 00:00:00,17920
+PRJ-007,Payments Platform Refresh,2025-05-01 00:00:00,29890
+PRJ-007,Payments Platform Refresh,2025-06-01 00:00:00,15720
+PRJ-007,Payments Platform Refresh,2025-07-01 00:00:00,32090
+PRJ-007,Payments Platform Refresh,2025-08-01 00:00:00,17690
+PRJ-008,HR System Consolidation,2025-01-01 00:00:00,71170
+PRJ-008,HR System Consolidation,2025-02-01 00:00:00,81040
+PRJ-008,HR System Consolidation,2025-03-01 00:00:00,104730
+PRJ-008,HR System Consolidation,2025-04-01 00:00:00,152590
+PRJ-008,HR System Consolidation,2025-05-01 00:00:00,99470
+PRJ-009,Cloud Cost Optimization,2025-01-01 00:00:00,143820
+PRJ-009,Cloud Cost Optimization,2025-02-01 00:00:00,116960
+PRJ-009,Cloud Cost Optimization,2025-03-01 00:00:00,96240
+PRJ-009,Cloud Cost Optimization,2025-04-01 00:00:00,281130
+PRJ-009,Cloud Cost Optimization,2025-05-01 00:00:00,172660
+PRJ-010,Fraud Detection Enhancement,2025-05-01 00:00:00,19750
+PRJ-010,Fraud Detection Enhancement,2025-06-01 00:00:00,15650
+PRJ-010,Fraud Detection Enhancement,2025-07-01 00:00:00,7580
+PRJ-010,Fraud Detection Enhancement,2025-08-01 00:00:00,16880
+PRJ-010,Fraud Detection Enhancement,2025-09-01 00:00:00,20070
+PRJ-010,Fraud Detection Enhancement,2025-10-01 00:00:00,20500
+PRJ-010,Fraud Detection Enhancement,2025-11-01 00:00:00,10630
+PRJ-010,Fraud Detection Enhancement,2025-12-01 00:00:00,9510
+PRJ-010,Fraud Detection Enhancement,2026-01-01 00:00:00,19990
+PRJ-010,Fraud Detection Enhancement,2026-02-01 00:00:00,15750
+PRJ-010,Fraud Detection Enhancement,2026-03-01 00:00:00,14390
+PRJ-011,Supply Chain Visibility,2025-03-01 00:00:00,25160
+PRJ-011,Supply Chain Visibility,2025-04-01 00:00:00,33710
+PRJ-011,Supply Chain Visibility,2025-05-01 00:00:00,41790
+PRJ-011,Supply Chain Visibility,2025-06-01 00:00:00,27470
+PRJ-011,Supply Chain Visibility,2025-07-01 00:00:00,46470
+PRJ-011,Supply Chain Visibility,2025-08-01 00:00:00,53280
+PRJ-011,Supply Chain Visibility,2025-09-01 00:00:00,19140
+PRJ-011,Supply Chain Visibility,2025-10-01 00:00:00,18480
+PRJ-011,Supply Chain Visibility,2025-11-01 00:00:00,35850
+PRJ-011,Supply Chain Visibility,2025-12-01 00:00:00,52690
+PRJ-011,Supply Chain Visibility,2026-01-01 00:00:00,36160
+PRJ-012,Digital Onboarding,2025-02-01 00:00:00,50010
+PRJ-012,Digital Onboarding,2025-03-01 00:00:00,63510
+PRJ-012,Digital Onboarding,2025-04-01 00:00:00,77680
+PRJ-012,Digital Onboarding,2025-05-01 00:00:00,77130
+PRJ-012,Digital Onboarding,2025-06-01 00:00:00,77560
+PRJ-013,Master Data Governance,2025-04-01 00:00:00,9740
+PRJ-013,Master Data Governance,2025-05-01 00:00:00,12930
+PRJ-013,Master Data Governance,2025-06-01 00:00:00,13690
+PRJ-013,Master Data Governance,2025-07-01 00:00:00,7520
+PRJ-013,Master Data Governance,2025-08-01 00:00:00,6660
+PRJ-013,Master Data Governance,2025-09-01 00:00:00,6790
+PRJ-013,Master Data Governance,2025-10-01 00:00:00,6510
+PRJ-013,Master Data Governance,2025-11-01 00:00:00,12870
+PRJ-013,Master Data Governance,2025-12-01 00:00:00,11440
+PRJ-013,Master Data Governance,2026-01-01 00:00:00,5960
+PRJ-013,Master Data Governance,2026-02-01 00:00:00,13870
+PRJ-014,Network Resilience Program,2025-05-01 00:00:00,117840
+PRJ-014,Network Resilience Program,2025-06-01 00:00:00,106320
+PRJ-014,Network Resilience Program,2025-07-01 00:00:00,40890
+PRJ-014,Network Resilience Program,2025-08-01 00:00:00,89490
+PRJ-014,Network Resilience Program,2025-09-01 00:00:00,109720
+PRJ-014,Network Resilience Program,2025-10-01 00:00:00,74010
+PRJ-014,Network Resilience Program,2025-11-01 00:00:00,44160
+PRJ-014,Network Resilience Program,2025-12-01 00:00:00,92660

@@ -1,0 +1,56 @@
+ID,Type,Description,Owner,Impact,Likelihood,Status,DateRaised,Mitigation / Action
+RAID-001,Risk,Insufficient testing window identified for master data cleanup,M. Choudhury,Low,Low,Open,2025-09-01 00:00:00,Contingency budget reserved; reviewing weekly
+RAID-002,Risk,translation and localization may slip past the committed date without an earlier decision point,A. Mehta,High,Low,Closed,2025-08-08 00:00:00,Added buffer to the schedule and flagged to steering committee
+RAID-003,Dependency,regional data center migration is blocked on infrastructure provisioning from IT Ops,P. Osei,Medium,High,Open,2025-06-18 00:00:00,Contract finance team engaged to expedite
+RAID-004,Risk,Possible delay to staff augmentation ramp-up due to resourcing constraints,S. Iyer,Low,High,Closed,2025-01-11 00:00:00,Contingency budget reserved; reviewing weekly
+RAID-005,Issue,Data quality problems surfaced during disaster recovery failover test,S. Iyer,High,High,Closed,2025-05-01 00:00:00,Vendor engaged with a 48-hour response SLA
+RAID-006,Risk,Possible delay to budget approval for Phase 2 due to resourcing constraints,R. Fernandes,Medium,Medium,Closed,2025-07-18 00:00:00,Added buffer to the schedule and flagged to steering committee
+RAID-007,Dependency,master data cleanup is blocked on infrastructure provisioning from IT Ops,L. Duarte,Low,Medium,Open,2025-06-12 00:00:00,Escalated to PMO for cross-team prioritization
+RAID-008,Risk,customer authentication flow may slip past the committed date without an earlier decision point,M. Choudhury,High,High,Open,2025-09-25 00:00:00,Contingency budget reserved; reviewing weekly
+RAID-009,Risk,Possible delay to key resource availability due to resourcing constraints,S. Iyer,Medium,Medium,Closed,2025-06-20 00:00:00,Contingency budget reserved; reviewing weekly
+RAID-010,Dependency,single sign-on rollout depends on a sign-off from a separate workstream,S. Iyer,High,Low,Open,2025-08-08 00:00:00,Contract finance team engaged to expedite
+RAID-011,Risk,translation and localization may slip past the committed date without an earlier decision point,P. Osei,Low,High,Open,2025-01-08 00:00:00,Escalated to sponsor for an early go/no-go decision
+RAID-012,Issue,Defects found during single sign-on rollout are delaying sign-off,S. Iyer,Medium,Medium,Open,2025-07-28 00:00:00,Fix scheduled for next release; workaround in place
+RAID-013,Risk,Possible delay to payment gateway certification due to resourcing constraints,J. Ncube,Medium,High,Closed,2025-05-08 00:00:00,Added buffer to the schedule and flagged to steering committee
+RAID-014,Dependency,legacy database decommission depends on a sign-off from a separate workstream,M. Choudhury,High,High,Open,2025-09-27 00:00:00,Escalated to PMO for cross-team prioritization
+RAID-015,Risk,Insufficient testing window identified for peak-season load testing,S. Iyer,Low,Medium,Open,2025-08-07 00:00:00,Escalated to sponsor for an early go/no-go decision
+RAID-016,Risk,Insufficient testing window identified for change freeze period,S. Iyer,Low,High,Open,2025-03-06 00:00:00,Added buffer to the schedule and flagged to steering committee
+RAID-017,Risk,regulatory reporting deadline may slip past the committed date without an earlier decision point,N. Kowalski,Medium,Medium,Closed,2025-03-12 00:00:00,Added buffer to the schedule and flagged to steering committee
+RAID-018,Assumption,Assuming cross-border data residency completes on the vendor's published timeline,M. Choudhury,Low,High,Closed,2025-03-02 00:00:00,Validated with vendor in writing
+RAID-019,Risk,Budget overrun risk on regulatory reporting deadline if scope is not controlled,M. Choudhury,Low,Medium,Closed,2025-04-03 00:00:00,Escalated to sponsor for an early go/no-go decision
+RAID-020,Risk,Possible delay to change freeze period due to resourcing constraints,N. Kowalski,Low,Low,Closed,2025-01-30 00:00:00,Added buffer to the schedule and flagged to steering committee
+RAID-021,Assumption,Plan assumes no additional approvals are needed for customer authentication flow,N. Kowalski,High,Low,Open,2025-05-10 00:00:00,Monitoring for change; no action needed yet
+RAID-022,Risk,regional data center migration may slip past the committed date without an earlier decision point,P. Osei,High,Low,Open,2025-06-01 00:00:00,Contingency budget reserved; reviewing weekly
+RAID-023,Assumption,Assuming budget approval for Phase 2 completes on the vendor's published timeline,T. Alvarez,Medium,Medium,Open,2025-06-15 00:00:00,To be reconfirmed at next steering committee
+RAID-024,Risk,key resource availability may slip past the committed date without an earlier decision point,R. Fernandes,Medium,Medium,Closed,2025-04-14 00:00:00,Escalated to sponsor for an early go/no-go decision
+RAID-025,Issue,master data cleanup is currently blocked pending vendor response,R. Fernandes,Medium,Medium,Open,2025-08-18 00:00:00,Vendor engaged with a 48-hour response SLA
+RAID-026,Issue,Data quality problems surfaced during network firewall upgrade,T. Alvarez,Medium,Low,Closed,2025-02-06 00:00:00,Vendor engaged with a 48-hour response SLA
+RAID-027,Issue,Defects found during regional data center migration are delaying sign-off,J. Ncube,Low,Low,Open,2025-08-07 00:00:00,Vendor engaged with a 48-hour response SLA
+RAID-028,Assumption,Plan assumes no additional approvals are needed for regulatory reporting deadline,K. Padilla,Medium,Low,Closed,2025-02-13 00:00:00,Validated with vendor in writing
+RAID-029,Assumption,Assuming key resource availability completes on the vendor's published timeline,M. Choudhury,Medium,Low,Closed,2025-05-15 00:00:00,To be reconfirmed at next steering committee
+RAID-030,Assumption,Plan assumes no additional approvals are needed for key resource availability,T. Alvarez,Low,Low,Closed,2025-01-04 00:00:00,Validated with vendor in writing
+RAID-031,Risk,disaster recovery failover test may slip past the committed date without an earlier decision point,R. Fernandes,Medium,High,Open,2025-06-04 00:00:00,Escalated to sponsor for an early go/no-go decision
+RAID-032,Issue,network firewall upgrade is currently blocked pending vendor response,S. Iyer,Low,High,Closed,2025-06-21 00:00:00,Root cause under investigation with the platform team
+RAID-033,Issue,core banking cutover window is currently blocked pending vendor response,A. Mehta,Medium,Medium,Open,2025-03-20 00:00:00,Root cause under investigation with the platform team
+RAID-034,Risk,Insufficient testing window identified for key resource availability,P. Osei,High,Medium,Open,2025-07-25 00:00:00,Contingency budget reserved; reviewing weekly
+RAID-035,Issue,Data quality problems surfaced during cross-border data residency,N. Kowalski,Medium,High,Closed,2025-04-21 00:00:00,Root cause under investigation with the platform team
+RAID-036,Dependency,staff augmentation ramp-up depends on a sign-off from a separate workstream,R. Fernandes,Medium,High,Open,2025-08-14 00:00:00,Tracking with the owning workstream lead weekly
+RAID-037,Dependency,change freeze period depends on a sign-off from a separate workstream,R. Fernandes,Low,High,Open,2025-07-09 00:00:00,Escalated to PMO for cross-team prioritization
+RAID-038,Risk,Budget overrun risk on budget approval for Phase 2 if scope is not controlled,T. Alvarez,Low,Medium,Open,2025-08-02 00:00:00,Contingency budget reserved; reviewing weekly
+RAID-039,Risk,Budget overrun risk on budget approval for Phase 2 if scope is not controlled,A. Mehta,Medium,High,Open,2025-08-12 00:00:00,Contingency budget reserved; reviewing weekly
+RAID-040,Dependency,peak-season load testing depends on a sign-off from a separate workstream,A. Mehta,Medium,Medium,Open,2025-10-02 00:00:00,Escalated to PMO for cross-team prioritization
+RAID-041,Issue,Defects found during regulatory reporting deadline are delaying sign-off,J. Ncube,High,Medium,Open,2025-01-05 00:00:00,Vendor engaged with a 48-hour response SLA
+RAID-042,Issue,cross-border data residency is currently blocked pending vendor response,K. Padilla,Medium,Medium,Closed,2025-03-24 00:00:00,Fix scheduled for next release; workaround in place
+RAID-043,Risk,disaster recovery failover test may slip past the committed date without an earlier decision point,A. Mehta,High,Low,Open,2025-10-03 00:00:00,Added buffer to the schedule and flagged to steering committee
+RAID-044,Issue,Data quality problems surfaced during translation and localization,R. Fernandes,Medium,High,Closed,2025-09-15 00:00:00,Fix scheduled for next release; workaround in place
+RAID-045,Issue,cross-border data residency is currently blocked pending vendor response,L. Duarte,Medium,High,Open,2025-08-15 00:00:00,Fix scheduled for next release; workaround in place
+RAID-046,Issue,peak-season load testing is currently blocked pending vendor response,J. Ncube,Medium,Low,Closed,2025-07-07 00:00:00,Fix scheduled for next release; workaround in place
+RAID-047,Risk,Possible delay to core banking cutover window due to resourcing constraints,P. Osei,Medium,High,Open,2025-10-02 00:00:00,Escalated to sponsor for an early go/no-go decision
+RAID-048,Risk,Insufficient testing window identified for translation and localization,M. Choudhury,Low,Low,Open,2025-07-05 00:00:00,Added buffer to the schedule and flagged to steering committee
+RAID-049,Assumption,Plan assumes no additional approvals are needed for cross-border data residency,T. Alvarez,Medium,Low,Closed,2025-10-21 00:00:00,Validated with vendor in writing
+RAID-050,Dependency,budget approval for Phase 2 depends on a sign-off from a separate workstream,K. Padilla,Low,High,Open,2025-09-30 00:00:00,Contract finance team engaged to expedite
+RAID-051,Risk,cross-border data residency may slip past the committed date without an earlier decision point,P. Osei,Medium,Medium,Open,2025-09-11 00:00:00,Contingency budget reserved; reviewing weekly
+RAID-052,Risk,Budget overrun risk on cross-border data residency if scope is not controlled,P. Osei,High,Medium,Closed,2025-01-21 00:00:00,Escalated to sponsor for an early go/no-go decision
+RAID-053,Risk,Budget overrun risk on regulatory reporting deadline if scope is not controlled,J. Ncube,Low,Low,Closed,2025-03-23 00:00:00,Escalated to sponsor for an early go/no-go decision
+RAID-054,Risk,Insufficient testing window identified for budget approval for Phase 2,N. Kowalski,Low,Medium,Open,2025-09-06 00:00:00,Contingency budget reserved; reviewing weekly
+RAID-055,Issue,mobile app store approval is currently blocked pending vendor response,A. Mehta,Medium,Low,Open,2025-09-13 00:00:00,Fix scheduled for next release; workaround in place

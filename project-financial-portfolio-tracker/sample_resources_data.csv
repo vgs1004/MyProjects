@@ -1,0 +1,93 @@
+Resource,Project,Month,PlannedHours,BookedHours,Utilization
+N. Kowalski,Data Warehouse Modernization,2025-05-01 00:00:00,60,45,0.75
+N. Kowalski,Data Warehouse Modernization,2025-06-01 00:00:00,60,36,0.6
+N. Kowalski,Data Warehouse Modernization,2025-07-01 00:00:00,120,86,0.7166666666666667
+N. Kowalski,Claims Automation,2025-01-01 00:00:00,40,28,0.7
+N. Kowalski,Claims Automation,2025-02-01 00:00:00,120,101,0.8416666666666667
+N. Kowalski,Claims Automation,2025-03-01 00:00:00,120,97,0.8083333333333333
+N. Kowalski,Claims Automation,2025-04-01 00:00:00,60,63,1.05
+T. Alvarez,Fraud Detection Enhancement,2025-05-01 00:00:00,160,179,1.11875
+T. Alvarez,Fraud Detection Enhancement,2025-06-01 00:00:00,100,86,0.86
+T. Alvarez,Fraud Detection Enhancement,2025-07-01 00:00:00,100,67,0.67
+T. Alvarez,Fraud Detection Enhancement,2025-08-01 00:00:00,160,138,0.8625
+T. Alvarez,Fraud Detection Enhancement,2025-09-01 00:00:00,60,39,0.65
+T. Alvarez,Supply Chain Visibility,2025-03-01 00:00:00,100,71,0.71
+T. Alvarez,Supply Chain Visibility,2025-04-01 00:00:00,80,79,0.9875
+T. Alvarez,Supply Chain Visibility,2025-05-01 00:00:00,40,24,0.6
+T. Alvarez,Master Data Governance,2025-04-01 00:00:00,120,80,0.6666666666666666
+T. Alvarez,Master Data Governance,2025-05-01 00:00:00,80,80,1
+T. Alvarez,Master Data Governance,2025-06-01 00:00:00,40,47,1.175
+T. Alvarez,Core Banking Migration,2025-04-01 00:00:00,60,61,1.0166666666666666
+T. Alvarez,Core Banking Migration,2025-05-01 00:00:00,80,79,0.9875
+T. Alvarez,Core Banking Migration,2025-06-01 00:00:00,100,68,0.68
+T. Alvarez,Core Banking Migration,2025-07-01 00:00:00,100,125,1.25
+T. Alvarez,Core Banking Migration,2025-08-01 00:00:00,100,91,0.91
+M. Choudhury,Claims Automation,2025-01-01 00:00:00,160,124,0.775
+M. Choudhury,Claims Automation,2025-02-01 00:00:00,160,113,0.70625
+M. Choudhury,Claims Automation,2025-03-01 00:00:00,40,29,0.725
+M. Choudhury,Claims Automation,2025-04-01 00:00:00,120,100,0.8333333333333334
+M. Choudhury,Data Warehouse Modernization,2025-05-01 00:00:00,120,95,0.7916666666666666
+M. Choudhury,Data Warehouse Modernization,2025-06-01 00:00:00,160,186,1.1625
+M. Choudhury,Network Resilience Program,2025-05-01 00:00:00,120,101,0.8416666666666667
+M. Choudhury,Network Resilience Program,2025-06-01 00:00:00,60,50,0.8333333333333334
+M. Choudhury,Network Resilience Program,2025-07-01 00:00:00,60,57,0.95
+M. Choudhury,Network Resilience Program,2025-08-01 00:00:00,120,98,0.8166666666666667
+J. Ncube,Fraud Detection Enhancement,2025-05-01 00:00:00,60,68,1.1333333333333333
+J. Ncube,Fraud Detection Enhancement,2025-06-01 00:00:00,160,180,1.125
+J. Ncube,Fraud Detection Enhancement,2025-07-01 00:00:00,60,56,0.9333333333333333
+J. Ncube,Master Data Governance,2025-04-01 00:00:00,160,99,0.61875
+J. Ncube,Master Data Governance,2025-05-01 00:00:00,40,45,1.125
+J. Ncube,Master Data Governance,2025-06-01 00:00:00,100,77,0.77
+J. Ncube,Master Data Governance,2025-07-01 00:00:00,160,159,0.99375
+S. Iyer,HR System Consolidation,2025-01-01 00:00:00,80,52,0.65
+S. Iyer,HR System Consolidation,2025-02-01 00:00:00,40,30,0.75
+S. Iyer,HR System Consolidation,2025-03-01 00:00:00,60,49,0.8166666666666667
+S. Iyer,HR System Consolidation,2025-04-01 00:00:00,100,101,1.01
+S. Iyer,Master Data Governance,2025-04-01 00:00:00,100,119,1.19
+S. Iyer,Master Data Governance,2025-05-01 00:00:00,80,90,1.125
+S. Iyer,Digital Onboarding,2025-02-01 00:00:00,160,108,0.675
+S. Iyer,Digital Onboarding,2025-03-01 00:00:00,100,111,1.11
+P. Osei,HR System Consolidation,2025-01-01 00:00:00,160,131,0.81875
+P. Osei,HR System Consolidation,2025-02-01 00:00:00,160,137,0.85625
+P. Osei,HR System Consolidation,2025-03-01 00:00:00,100,108,1.08
+P. Osei,HR System Consolidation,2025-04-01 00:00:00,40,43,1.075
+P. Osei,HR System Consolidation,2025-05-01 00:00:00,60,75,1.25
+P. Osei,Data Warehouse Modernization,2025-05-01 00:00:00,60,59,0.9833333333333333
+P. Osei,Data Warehouse Modernization,2025-06-01 00:00:00,100,112,1.12
+K. Padilla,Fraud Detection Enhancement,2025-05-01 00:00:00,160,193,1.20625
+K. Padilla,Fraud Detection Enhancement,2025-06-01 00:00:00,60,57,0.95
+K. Padilla,Fraud Detection Enhancement,2025-07-01 00:00:00,60,37,0.6166666666666667
+K. Padilla,Fraud Detection Enhancement,2025-08-01 00:00:00,160,164,1.025
+K. Padilla,Fraud Detection Enhancement,2025-09-01 00:00:00,120,130,1.0833333333333333
+K. Padilla,Network Resilience Program,2025-05-01 00:00:00,100,124,1.24
+K. Padilla,Network Resilience Program,2025-06-01 00:00:00,60,68,1.1333333333333333
+K. Padilla,Network Resilience Program,2025-07-01 00:00:00,60,37,0.6166666666666667
+L. Duarte,Regulatory Reporting Upgrade,2025-05-01 00:00:00,120,97,0.8083333333333333
+L. Duarte,Regulatory Reporting Upgrade,2025-06-01 00:00:00,120,105,0.875
+L. Duarte,Regulatory Reporting Upgrade,2025-07-01 00:00:00,60,38,0.6333333333333333
+L. Duarte,Cloud Cost Optimization,2025-01-01 00:00:00,100,103,1.03
+L. Duarte,Cloud Cost Optimization,2025-02-01 00:00:00,120,105,0.875
+L. Duarte,Cloud Cost Optimization,2025-03-01 00:00:00,120,82,0.6833333333333333
+L. Duarte,Cloud Cost Optimization,2025-04-01 00:00:00,60,56,0.9333333333333333
+A. Mehta,Network Resilience Program,2025-05-01 00:00:00,120,72,0.6
+A. Mehta,Network Resilience Program,2025-06-01 00:00:00,60,43,0.7166666666666667
+A. Mehta,Network Resilience Program,2025-07-01 00:00:00,100,100,1
+A. Mehta,HR System Consolidation,2025-01-01 00:00:00,120,77,0.6416666666666667
+A. Mehta,HR System Consolidation,2025-02-01 00:00:00,160,150,0.9375
+R. Fernandes,HR System Consolidation,2025-01-01 00:00:00,60,43,0.7166666666666667
+R. Fernandes,HR System Consolidation,2025-02-01 00:00:00,40,44,1.1
+R. Fernandes,Master Data Governance,2025-04-01 00:00:00,120,74,0.6166666666666667
+R. Fernandes,Master Data Governance,2025-05-01 00:00:00,40,36,0.9
+R. Fernandes,Master Data Governance,2025-06-01 00:00:00,120,148,1.2333333333333334
+R. Fernandes,Master Data Governance,2025-07-01 00:00:00,120,112,0.9333333333333333
+R. Fernandes,Master Data Governance,2025-08-01 00:00:00,160,125,0.78125
+R. Fernandes,Claims Automation,2025-01-01 00:00:00,120,145,1.2083333333333333
+R. Fernandes,Claims Automation,2025-02-01 00:00:00,160,150,0.9375
+R. Fernandes,Claims Automation,2025-03-01 00:00:00,80,96,1.2
+R. Fernandes,Claims Automation,2025-04-01 00:00:00,60,69,1.15
+R. Fernandes,Claims Automation,2025-05-01 00:00:00,60,52,0.8666666666666667
+R. Fernandes,Cloud Cost Optimization,2025-01-01 00:00:00,100,81,0.81
+R. Fernandes,Cloud Cost Optimization,2025-02-01 00:00:00,160,121,0.75625
+R. Fernandes,Cloud Cost Optimization,2025-03-01 00:00:00,40,30,0.75
+R. Fernandes,Cloud Cost Optimization,2025-04-01 00:00:00,80,89,1.1125
+R. Fernandes,Cloud Cost Optimization,2025-05-01 00:00:00,60,73,1.2166666666666666
