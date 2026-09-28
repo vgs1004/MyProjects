@@ -1,0 +1,5 @@
+data/
+charts_output/
+*.xlsx
+*.xltx
+*.pdf
