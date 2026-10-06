@@ -3,6 +3,8 @@
 
 # Modeling Penalty Kick Behavior using Discrete Choice Models
 
+*MSc team project (Analytics Project, RWTH Aachen University). Full report: `Analytics Group 5 Thesis Final.pdf`.*
+
 An advanced sports analytics pipeline that applies econometric **Discrete Choice Models (DCMs)** to predict and evaluate penalty kick target selection in elite football. The repository combines data processing, statistical estimation using `Biogeme`, and an interactive web deployment dashboard built with `Streamlit`.
 
 ## 📊 Project Overview
@@ -79,54 +81,38 @@ Where:
 ## 📂 Repository Code Structure
 
 ```text
-├── data/
-│   └── penalties_dataset.csv     # Scraped and verified historical event data (2,358 entries)
-├── estimation/
-│   ├── model_estimation.py       # Core python engine utilizing Biogeme for maximum likelihood
-│   └── naive_baseline.py         # Baseline constant-only (ASC) reference script
-├── dashboard/
-│   └── app.py                    # Interactive Streamlit frontend deployment application
-├── requirements.txt              # Project environment dependencies
-└── README.md                     # Repository documentation
-
+├── DataSetModel0NA6Alt.csv            # Penalty kick dataset used for estimation (2,358 kicks, ';' separated)
+├── DataSetModelPlayer.csv             # Player-level panel version of the dataset
+├── naive.py                           # Multinomial logit estimation in Biogeme (saves a .pickle of results)
+├── unbalance.py                       # Nested logit estimation in Biogeme
+├── mixedlogit.py                      # Streamlit view of mixed logit parameters (ASC, mu, sigma)
+├── app.py                             # Streamlit prediction app (uses the estimated coefficients)
+├── Streamlit_App_Guide.pdf            # Guide to the Streamlit app
+├── Analytics Group 5 Thesis Final.pdf # Full project report
+└── requirements.txt                   # Python dependencies
 ```
-
-### ⚠️ Python File Retention Notice
-
-> Do **NOT** delete any python scripts! `model_estimation.py` is essential for compiling your econometric parameters inside the `Biogeme` modeling framework. `app.py` serves as your visual web interface tool that brings your mathematical formulas into an accessible space for sports coaches and broadcast analysts. Both are required for the project pipeline to work.
-> 
-> 
 
 ---
 
 ## 🚀 Getting Started
 
-### Prerequisites
-
-Ensure you have Python 3.9+ installed along with the critical structural package dependencies:
-
 ```bash
-pip install pip --upgrade
 pip install -r requirements.txt
-
 ```
 
-*(Your `requirements.txt` must explicitly contain `pandas`, `biogeme`, and `streamlit`.)*
-
-### Running the Estimation Engine
-
-To run the Maximum Likelihood Estimation and view the output metrics (Log-Likelihood, AIC, BIC, parameter $t$-tests):
+### Running the estimation
 
 ```bash
-python estimation/model_estimation.py
-
+python naive.py        # multinomial logit
+python unbalance.py    # nested logit
 ```
 
-### Launching the Interactive Dashboard
+Each script prints the estimated parameters (with log-likelihood and fit statistics) and writes the Biogeme results files to the working directory.
 
-To deploy the prediction model into a local, user-friendly browser graphical user interface:
+### Launching the prediction app
 
 ```bash
-streamlit run dashboard/app.py
-
+streamlit run app.py
 ```
+
+Set the player, goalkeeper and match inputs to see the predicted probability for each of the six target zones.

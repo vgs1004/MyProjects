@@ -3,12 +3,12 @@ import pandas as pd
 import plotly.express as px
 import os
 
-BASE_DIR    = r"D:\Downloads\capital_gains_dashboard"
+BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
 TAX_FILE    = os.path.join(BASE_DIR, "data", "output", "final_tax_computation.csv")
-EXCEL_FILE  = os.path.join(BASE_DIR, "data", "output", "Greshma_Strategic_Tax_Report.xlsx")
+EXCEL_FILE  = os.path.join(BASE_DIR, "data", "output", "Strategic_Tax_Report.xlsx")
 BUDGET_DATE = pd.Timestamp("2024-07-23")
 
-st.set_page_config(page_title="Greshma Tax Dashboard", page_icon="📊", layout="wide")
+st.set_page_config(page_title="Capital Gains Tax Dashboard", page_icon="📊", layout="wide")
 
 st.markdown("""
 <style>
@@ -317,7 +317,7 @@ elif "Export" in page:
                 st.download_button(
                     "⬇ Download Excel Report",
                     data=f.read(),
-                    file_name="Greshma_Tax_Report_FY2024-25.xlsx",
+                    file_name="Tax_Report_FY2024-25.xlsx",
                     mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
                     use_container_width=True
                 )
@@ -330,7 +330,7 @@ elif "Export" in page:
         st.download_button(
             "⬇ Download CSV",
             data=dff.to_csv(index=False),
-            file_name="Greshma_Filtered_FY2024-25.csv",
+            file_name="Filtered_FY2024-25.csv",
             mime="text/csv",
             use_container_width=True
         )

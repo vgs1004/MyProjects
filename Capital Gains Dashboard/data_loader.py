@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import io
 
-BASE_DIR    = r"D:\Downloads\capital_gains_dashboard"
+BASE_DIR    = os.path.dirname(os.path.abspath(__file__))
 DATA_SOURCE = os.path.join(BASE_DIR, "data", "client_files")
 OUTPUT_DIR  = os.path.join(BASE_DIR, "data", "output")
 
@@ -37,5 +37,10 @@ def load_and_consolidate_reports(source_path, output_path):
         print(f"done. consolidated {len(all_client_data)} client files.")
         return master_df
 
+SAMPLE_SOURCE = os.path.join(BASE_DIR, "sample_data", "client_files")
+
 if __name__ == "__main__":
-    load_and_consolidate_reports(DATA_SOURCE, OUTPUT_DIR)
+    # real client files are not published; fall back to the synthetic sample
+    source = DATA_SOURCE if os.path.isdir(DATA_SOURCE) and os.listdir(DATA_SOURCE) else SAMPLE_SOURCE
+    print(f"reading client files from {source}")
+    load_and_consolidate_reports(source, OUTPUT_DIR)

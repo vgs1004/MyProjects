@@ -1,6 +1,8 @@
 
 # Green Capital: The Role of Natural Capital in Economic Growth
 
+*MSc team project at RWTH Aachen University (Abishai Srinivasan, Sangita Conjeevaram Viswanathan, Shrrivatsan Paramasivam, Varshini Gayathri Suresh).*
+
 An empirical, data-driven macroeconomic analysis investigating the extent to which natural capital contributes to economic output, featuring comparative case studies of an industrialized economy (**Germany**) and a resource-dependent economy (**Brazil**).
 
 ## 📊 Project Overview
@@ -111,8 +113,26 @@ The analytics engine is designed sequentially to ensure reproducibility:
 
 4. **Scenario Simulation:** Executes stress-testing models simulating resource degradation to predict macro-level output shocks.
 
-
-
 ---
 
+## 📂 Data and How to Run
 
+The World Bank data is not stored in this repository. To reproduce the analysis:
+
+1. Go to the World Bank Data Catalog and search for **"The Changing Wealth of Nations"**.
+2. Download the dataset as CSV.
+3. Save it in this folder as `WB_CWON.csv`.
+4. Install the dependencies and run the notebook:
+
+```bash
+pip install -r requirements.txt
+jupyter notebook climate_analytics_updated.ipynb
+```
+
+## 📄 Files
+
+| File | Purpose |
+|---|---|
+| `climate_analytics_updated.ipynb` | Data preparation, EDA, regressions and scenario simulation |
+| `Group_Presentation.pdf` | Project presentation (motivation, research question, literature) |
+| `requirements.txt` | Python dependencies |

@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-BASE_DIR     = r"D:\Downloads\capital_gains_dashboard"
+BASE_DIR     = os.path.dirname(os.path.abspath(__file__))
 INPUT_FILE   = os.path.join(BASE_DIR, "data", "output", "master_cleaned_data.csv")
 FINAL_OUTPUT = os.path.join(BASE_DIR, "data", "output", "final_tax_computation.csv")
 

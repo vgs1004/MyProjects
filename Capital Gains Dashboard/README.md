@@ -1,106 +1,37 @@
-# Capital Gains Tax Pipeline — Greshma Shares & Stocks FY 2024-25
+# Capital Gains Tax Pipeline (Python, Streamlit)
 
-Python pipeline to automate FIFO-based capital gains tax computation for 23 client portfolios.
+Business Data Management project, IIT Madras Diploma in Data Science, built on real data from a stockbroking firm for FY 2024-25. The pipeline turns 23 clients' realised profit and loss statements into a per-client capital gains tax computation and an interactive dashboard.
 
----
+**Client data is confidential and is not included.** The repository ships with two synthetic sample statements in `sample_data/client_files/` so the full pipeline can be run end to end.
 
-## Folder Structure
+## What it does
 
-```
-capital_gains_dashboard/
-├── data/
-│   ├── client_files/        ← put all 23 client .md files here
-│   └── output/              ← all generated CSVs and Excel go here
-├── data_loader.py
-├── data_cleaner.py
-├── tax_engine.py
-├── excel_generator.py
-└── dashboard.py
-```
+1. **Load** (`data_loader.py`): reads each client's statement (markdown tables), consolidates all clients into one dataset and tags each row with the client.
+2. **Clean** (`data_cleaner.py`): fixes number formats, standardises scrip names and ISINs, parses mixed date formats, corrects rows where purchase and sell dates were swapped, computes the holding period, and recalculates gains where the source used a 99999.99 placeholder.
+3. **Compute tax** (`tax_engine.py`): classifies each realised lot as short-term (held 365 days or less) or long-term, applies the dual rates around the Union Budget date of 23 July 2024 (STCG 15% before, 20% after; LTCG 12.5% above the 1.25 lakh exemption under Section 112A), sets off losses against gains per client (Section 70), and allocates the tax across profitable trades.
+4. **Dashboard** (`dashboard.py`): Streamlit app with portfolio KPIs, tax by category, client and scrip level profit and loss, and CSV download of filtered results.
 
----
-
-## Setup
-
-Install dependencies:
+## How to run
 
 ```
-pip install pandas openpyxl xlsxwriter streamlit plotly
-```
-
----
-
-## How to Run (in order)
-
-**Step 1 — Load client files**
-```
+pip install -r requirements.txt
 python data_loader.py
-```
-Reads all `.md` files from `client_files/` and produces `master_raw_data.csv`.
-
-**Step 2 — Clean the data**
-```
 python data_cleaner.py
-```
-Fixes date formats, numeric columns, swapped dates. Produces `master_cleaned_data.csv`.
-
-**Step 3 — Run tax computation**
-```
 python tax_engine.py
-```
-Applies FIFO logic, STCG/LTCG classification, Budget 2024 dual rates, Section 70 set-off. Produces `final_tax_computation.csv`.
-
-**Step 4 — Generate Excel report**
-```
-python excel_generator.py
-```
-Produces `Greshma_Strategic_Tax_Report.xlsx` with 6 sheets.
-
-**Step 5 — Launch dashboard**
-```
 streamlit run dashboard.py
 ```
-Opens the interactive browser dashboard. Keep the terminal open while using it.
 
----
+Outputs are written to `data/output/` (`master_raw_data.csv`, `master_cleaned_data.csv`, `final_tax_computation.csv`). With real data, place the client statements in `data/client_files/`; otherwise the loader uses the synthetic sample automatically.
 
-## Changing the Input Path
+## Files
 
-All five files use the same `BASE_DIR` variable at the top. Change it in each file to match your system:
-
-| File | Line to change |
+| File | Purpose |
 |---|---|
-| `data_loader.py` | `BASE_DIR = r"D:\Downloads\capital_gains_dashboard"` |
-| `data_cleaner.py` | `BASE_DIR = r"D:\Downloads\capital_gains_dashboard"` |
-| `tax_engine.py` | `BASE_DIR = r"D:\Downloads\capital_gains_dashboard"` |
-| `excel_generator.py` | `BASE_DIR = r"D:\Downloads\capital_gains_dashboard"` |
-| `dashboard.py` | `BASE_DIR = r"D:\Downloads\capital_gains_dashboard"` |
+| `data_loader.py` | Consolidates client statements |
+| `data_cleaner.py` | Data cleaning and validation |
+| `tax_engine.py` | Tax classification, set-off and liability |
+| `dashboard.py` | Streamlit dashboard |
+| `sample_data/client_files/` | Two synthetic client statements |
+| `requirements.txt` | Python dependencies |
 
-Example — if your folder is on the desktop:
-```python
-BASE_DIR = r"C:\Users\YourName\Desktop\capital_gains_dashboard"
-```
-
-On Mac/Linux use forward slashes:
-```python
-BASE_DIR = "/home/yourname/capital_gains_dashboard"
-```
-
----
-
-## Output Files
-
-| File | Description |
-|---|---|
-| `master_raw_data.csv` | Raw consolidated data from all client files |
-| `master_cleaned_data.csv` | Cleaned and validated dataset |
-| `final_tax_computation.csv` | Final dataset with tax fields |
-| `Greshma_Strategic_Tax_Report.xlsx` | 6-sheet Excel report for the broker |
-
----
-
-## Notes
-
-- Client `.md` files must be placed in `data/client_files/` before running Step 1.
-- Steps must be run in order — each script depends on the output of the previous one.
-- The dashboard reads `final_tax_computation.csv` directly, so re-running Step 3 automatically refreshes it on next launch.
+Tools: Python, pandas, Streamlit, Plotly.
