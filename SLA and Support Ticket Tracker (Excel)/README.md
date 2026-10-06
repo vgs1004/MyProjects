@@ -1,4 +1,4 @@
-# SLA and Support Ticket Tracker
+# SLA and Support Ticket Tracker (Excel)
 
 An Excel-based SLA tracker for a support desk: raw ticket log, automatic
 breach calculation, and a PivotTable/PivotChart dashboard with slicers.

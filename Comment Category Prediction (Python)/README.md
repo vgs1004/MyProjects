@@ -1,4 +1,4 @@
-# Comment Category Prediction Challenge (Kaggle)
+# Comment Category Prediction (Python, Kaggle)
 
 Machine Learning Practice project, IIT Madras Diploma in Data Science. Community prediction competition on Kaggle: predict the category assigned to each user comment (Neutral, Toxic, Threat, Hate) from the comment text and its metadata.
 
@@ -29,7 +29,7 @@ The stacked ensemble reached the competition cutoff of 0.80+ macro F1 and genera
 
 | File | Purpose |
 |---|---|
-| `23ds2000055-notebook-t12026.ipynb` | Full notebook: data load, EDA, modelling, submission, results |
+| `Comment_Category_Prediction.ipynb` | Full notebook: data load, EDA, modelling, submission, results |
 
 The competition data (`train.csv`, `test.csv`) is not included, as it is subject to the competition rules. It is available to participants on the Kaggle competition page.
 

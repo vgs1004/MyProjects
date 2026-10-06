@@ -1,5 +1,5 @@
 
-# Green Capital: The Role of Natural Capital in Economic Growth
+# Green Capital and Economic Growth (Python)
 
 *MSc team project at RWTH Aachen University (Abishai Srinivasan, Sangita Conjeevaram Viswanathan, Shrrivatsan Paramasivam, Varshini Gayathri Suresh).*
 
@@ -126,13 +126,13 @@ The World Bank data is not stored in this repository. To reproduce the analysis:
 
 ```bash
 pip install -r requirements.txt
-jupyter notebook climate_analytics_updated.ipynb
+jupyter notebook Green_Capital_Analysis.ipynb
 ```
 
 ## 📄 Files
 
 | File | Purpose |
 |---|---|
-| `climate_analytics_updated.ipynb` | Data preparation, EDA, regressions and scenario simulation |
+| `Green_Capital_Analysis.ipynb` | Data preparation, EDA, regressions and scenario simulation |
 | `Group_Presentation.pdf` | Project presentation (motivation, research question, literature) |
 | `requirements.txt` | Python dependencies |

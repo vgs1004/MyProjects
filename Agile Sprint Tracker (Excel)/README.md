@@ -1,4 +1,4 @@
-# Agile Sprint Tracker — Excel + VBA
+# Agile Sprint Tracker (Excel, VBA)
 
 **Tools:** Microsoft Excel, VBA Macros  
 **Domain:** Project Management / Agile / Scrum  
@@ -8,7 +8,7 @@
 
 ## Overview
 
-A fully functional Agile Sprint Tracker built in Excel for a simulated CRM Modernisation project. Designed for Scrum teams to manage backlog, track sprint progress, monitor velocity, and run retrospectives — all within a single workbook. Includes 4 VBA macros to automate repetitive PMO tasks.
+A fully functional Agile Sprint Tracker built in Excel for a simulated CRM Modernisation project. Designed for Scrum teams to manage backlog, track sprint progress, monitor velocity, and run retrospectives, all within a single workbook. Includes 4 VBA macros to automate repetitive PMO tasks.
 
 ---
 
@@ -20,7 +20,7 @@ A fully functional Agile Sprint Tracker built in Excel for a simulated CRM Moder
 | **Backlog** | Full product backlog with MoSCoW prioritisation and data validation dropdowns |
 | **Burndown Data** | Sprint 4 burndown chart data (ideal vs actual remaining points) |
 | **Velocity Tracker** | Sprint-over-sprint velocity comparison with averages |
-| **Retrospective Log** | Structured retro notes — went well, didn't go well, action items |
+| **Retrospective Log** | Structured retro notes: went well, didn't go well, action items |
 | **VBA Macros** | 4 automation macros with step-by-step instructions |
 
 ---
@@ -36,7 +36,7 @@ A fully functional Agile Sprint Tracker built in Excel for a simulated CRM Moder
 **Product Backlog**
 - 25 user stories across 5 sprints
 - MoSCoW prioritisation (Must / Should / Could / Won't)
-- Dropdown data validation on Status and Priority columns — no free-text errors
+- Dropdown data validation on Status and Priority columns, so no free-text errors
 - Acceptance criteria and Definition of Done per story
 
 **Velocity Tracker**

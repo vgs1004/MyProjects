@@ -23,13 +23,13 @@ Regression models predicting the compressive strength of concrete (MPa) from its
 
 ```bash
 pip install -r requirements.txt
-jupyter notebook cementconcretestrength.ipynb
+jupyter notebook Concrete_Strength_Regression.ipynb
 ```
 
 ## Files
 
 | File | Purpose |
 |---|---|
-| `cementconcretestrength.ipynb` | Full analysis and modelling |
+| `Concrete_Strength_Regression.ipynb` | Full analysis and modelling |
 | `Concrete_Data.csv` | Dataset |
 | `requirements.txt` | Python dependencies |

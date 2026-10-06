@@ -1,4 +1,4 @@
-# Project Financial and Portfolio Tracker
+# Project Financial and Portfolio Tracker (Excel)
 
 An Excel-based PMO tool for tracking a portfolio of projects: budget vs
 actual spend, schedule and risk RAG status, resource utilization, and

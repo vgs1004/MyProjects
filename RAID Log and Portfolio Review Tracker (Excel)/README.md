@@ -1,4 +1,4 @@
-# RAID Log and Monthly Portfolio Review Tracker
+# RAID Log and Portfolio Review Tracker (Excel)
 
 An Excel RAID log (Risks, Assumptions, Issues, Dependencies) with a
 monthly review summary: open-item counts by type and impact, and a
@@ -36,7 +36,7 @@ anonymized, synthetic form.
   Percent Closed.
 - Open Items by Type (bar chart) and Open Items by Impact (pie chart),
   both driven by live `COUNTIFS` formulas against the RAID Log.
-- "Items Needing Attention" — a filtered, RAG-formatted list of every
+- "Items Needing Attention": a filtered, RAG-formatted list of every
   High impact item that is currently Open.
 
 ## Files

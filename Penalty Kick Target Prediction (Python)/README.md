@@ -1,9 +1,9 @@
 
 ---
 
-# Modeling Penalty Kick Behavior using Discrete Choice Models
+# Penalty Kick Target Prediction (Python, Biogeme, Streamlit)
 
-*MSc team project (Analytics Project, RWTH Aachen University). Full report: `Analytics Group 5 Thesis Final.pdf`.*
+*MSc team project (Analytics Project, RWTH Aachen University). Full report: `Project_Report.pdf`.*
 
 An advanced sports analytics pipeline that applies econometric **Discrete Choice Models (DCMs)** to predict and evaluate penalty kick target selection in elite football. The repository combines data processing, statistical estimation using `Biogeme`, and an interactive web deployment dashboard built with `Streamlit`.
 
@@ -88,7 +88,7 @@ Where:
 ├── mixedlogit.py                      # Streamlit view of mixed logit parameters (ASC, mu, sigma)
 ├── app.py                             # Streamlit prediction app (uses the estimated coefficients)
 ├── Streamlit_App_Guide.pdf            # Guide to the Streamlit app
-├── Analytics Group 5 Thesis Final.pdf # Full project report
+├── Project_Report.pdf                 # Full project report
 └── requirements.txt                   # Python dependencies
 ```
 
