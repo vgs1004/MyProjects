@@ -1,9 +1,9 @@
 Attribute VB_Name = "modExportReport"
 Option Explicit
 
-' Saves a values-only copy of Exceptions, Pivots and Summary as a dated
-' report file in Reports\, so each day's report is a frozen snapshot
-' independent of the live workbook. Returns the saved path.
+' Saves a values-only copy of Exceptions and Dashboard as a dated report
+' file in Reports\, so each day's report is a frozen snapshot independent
+' of the live workbook. Returns the saved path.
 Public Function ExportReport() As String
     Dim reportDate As Date
     Dim exportPath As String
@@ -21,7 +21,7 @@ Public Function ExportReport() As String
     Application.DisplayAlerts = False
 
     Set newWb = Workbooks.Add(xlWBATWorksheet)
-    sheetNames = Array("Exceptions", "Pivots", "Summary")
+    sheetNames = Array("Exceptions", "Dashboard")
 
     For i = 0 To UBound(sheetNames)
         Set ws = ThisWorkbook.Sheets(sheetNames(i))

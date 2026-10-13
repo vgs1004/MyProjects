@@ -1,17 +1,18 @@
 # Shipment Ageing Report Automation (Excel, VBA)
 
 A one-click VBA macro that turns a 180,000-line supply chain export into
-a filtered ageing report, region pivots, a KPI summary, a dated report
-file, and (optionally) one Outlook email draft per region. Rebuilds the
-daily last-mile ageing report automated at Flipkart (Ekart Logistics),
-on a large public dataset so the method can be shown without company data.
+a filtered ageing report, a colour-card KPI dashboard with native charts,
+a dated report file, and (optionally) one Outlook email draft per region.
+Rebuilds the daily last-mile ageing report automated at Flipkart (Ekart
+Logistics), on a large public dataset so the method can be shown without
+company data. Opening the file lands on the **Dashboard** sheet.
 
 ## Business problem
 
 A fraud/logistics team runs a daily report by hand: download the ERP
-export, remove closed statuses, build pivots by region, and email the
+export, remove closed statuses, build a summary by region, and email the
 pending list to hub teams. `RunDailyReport` does all of that in one
-click, in under 15 seconds, on 180,000+ rows.
+click, in about 22 seconds, on 180,000+ rows.
 
 ## Data
 
@@ -52,7 +53,8 @@ rows padded with already-closed orders. Full writeup: `Project Plan.md`.
 
 - Excel VBA: `Workbooks.OpenText` with `Origin:=1252` for the encoding,
   array-based processing (not cell-by-cell) for speed on 180k+ rows,
-  native PivotTables, Outlook automation via `.Display` (never `.Send`)
+  native charts built from computed aggregates (no PivotTables), Outlook
+  automation via `.Display` (never `.Send`)
 - Python (`pandas`) for upstream data profiling and verification only —
   the actual report pipeline is 100% VBA, nothing is pre-computed
 
@@ -62,7 +64,7 @@ rows padded with already-closed orders. Full writeup: `Project Plan.md`.
 |---|---|
 | Rows imported | 180,519 |
 | Exception lines | 977 |
-| Runtime | 13.4 seconds |
+| Runtime | 22.3 seconds |
 | % Late | 58.2% |
 | Average delay | 0.66 days |
 | Share 3+ days late | 9.7% |
@@ -72,12 +74,11 @@ rows padded with already-closed orders. Full writeup: `Project Plan.md`.
 
 | Sheet | Purpose |
 |---|---|
+| **Dashboard** | What opens first: 5 colour KPI cards, 4 charts (ageing-bucket doughnut, top-regions bar, market bar, weekly trend line), top-10-cities table |
 | Control | Run Daily Report / Re-import CSV / Draft Emails Only buttons, last run status |
 | Settings | Report Date, lookback days, status lists, bucket limits, region-to-email table |
 | RawData | Imported export (cleared and repopulated each import) |
 | Exceptions | Filtered exception lines with Delay Days and Ageing Bucket, RAG conditional formatting |
-| Pivots | Region x Ageing Bucket and Market x Shipping Mode (native PivotTables), plus a computed Top 10 Cities by Late Lines table |
-| Summary | Live-formula KPI cards, colour-coded by severity |
 | Run Log | One row per run: date, report date, rows in, rows out, seconds, drafts created |
 
 ## VBA modules (`vba/`)
@@ -86,22 +87,38 @@ rows padded with already-closed orders. Full writeup: `Project Plan.md`.
   only the 16 columns the report needs
 - `modCleanAndFilter` — array-based filter against the Settings rules,
   writes Exceptions in one block
-- `modBuildPivots` — the 2 native PivotTables + the computed top-cities
-  table
-- `modBuildSummary` — colours the KPI cards by severity threshold
+- `modBuildDashboard` — one array scan of Exceptions builds all 5 KPI
+  values, 4 native charts, and the top-cities table; no PivotTables, no
+  cell-by-cell loops
 - `modExportReport` — saves a values-only dated snapshot to `Reports/`
 - `modDraftEmails` — one Outlook draft per region with pending lines,
   `.Display` only, never `.Send`
 - `modRunDailyReport` — the master macro; also exposes `ReimportCsv` and
   `RunDraftEmailsOnly` as separate buttons
 
-Two implementation details worth knowing if you read the code: `Workbooks.OpenText`'s
-`xlSkipColumn` leaves a skipped column's position blank rather than
-compacting the remaining columns (easy to get wrong, and I did on the
-first pass — see the comment in `modImportData.bas`), and Form Control
-buttons and PivotTables both turned out to interfere with
-clipboard-based `CopyPicture` screenshot capture under headless
-automation, which is a build-tooling quirk, not a workbook defect.
+### Implementation notes worth knowing if you read the code
+
+- `Workbooks.OpenText`'s `xlSkipColumn` leaves a skipped column's
+  position blank rather than compacting the remaining columns (easy to
+  get wrong, and I did on the first pass — see the comment in
+  `modImportData.bas`).
+- The dashboard went through two redesigns. First pass used native
+  PivotTables and a muted single-colour theme; it worked but looked
+  flat and the pivot grids read as "just a table," not a dashboard.
+  Second pass replaced PivotTables with plain VBA-computed aggregates
+  feeding real charts (doughnut, bar, line), and swapped the colour
+  scheme for distinct flat KPI-card colours.
+- Rebuilding the dashboard surfaced two real VBA bugs, both only
+  visible because the build is driven by a hidden, automated Excel
+  instance where dialogs don't display: a compile-time array type
+  mismatch (`String()` passed where `Variant()` was declared) and a
+  `Range.Select` call that throws a runtime 1004 error with no active
+  window. Both are fixed; `.Select`/`.Activate` on a Range no longer
+  appears anywhere in the codebase.
+- Form Control buttons, PivotTables, and (occasionally) plain charts
+  all interfere with clipboard-based `CopyPicture` screenshot capture
+  under headless automation in this environment — a build-tooling
+  quirk affecting how these screenshots got made, not a workbook defect.
 
 ## How to run
 
@@ -130,5 +147,5 @@ automation, which is a build-tooling quirk, not a workbook defect.
 Excel, build 2-3 pivots manually, write up a KPI summary, save a dated
 copy, draft an email per region.
 
-**After**: one click, 13.4 seconds, same output, every rule
-business-editable on the Settings sheet.
+**After**: one click, ~22 seconds, a real dashboard instead of raw
+pivot grids, every rule business-editable on the Settings sheet.

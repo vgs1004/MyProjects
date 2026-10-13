@@ -21,9 +21,8 @@ VBA_DIR = os.path.join(HERE, "vba")
 CSV_PATH = os.path.join(HERE, "Data", "DataCoSupplyChainDataset.csv")
 
 MODULES = [
-    "modImportData.bas", "modCleanAndFilter.bas", "modBuildPivots.bas",
-    "modBuildSummary.bas", "modExportReport.bas", "modDraftEmails.bas",
-    "modRunDailyReport.bas",
+    "modImportData.bas", "modCleanAndFilter.bas", "modBuildDashboard.bas",
+    "modExportReport.bas", "modDraftEmails.bas", "modRunDailyReport.bas",
 ]
 
 xl = win32.Dispatch("Excel.Application")
@@ -89,6 +88,9 @@ try:
     t0 = time.time()
     xl.Run("modRunDailyReport.RunDailyReport", CSV_PATH, True)  # silent=True: no blocking MsgBox
     print(f"Test run finished in {time.time() - t0:.1f}s (wall clock, includes the 95MB CSV import)")
+
+    # Dashboard should be what the user sees first on open, not Control
+    wb.Worksheets("Dashboard").Activate()
 
     wb.Save()
     success = True

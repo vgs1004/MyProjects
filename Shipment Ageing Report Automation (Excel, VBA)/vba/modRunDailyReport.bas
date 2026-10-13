@@ -2,8 +2,8 @@ Attribute VB_Name = "modRunDailyReport"
 Option Explicit
 
 ' Master macro: Import (first run only, or after Re-import) -> Clean and
-' Filter -> Pivots -> Summary -> Export dated report -> Draft Emails
-' (only if Settings!B16 = "Yes") -> Run Log entry.
+' Filter -> Dashboard (charts + KPIs) -> Export dated report -> Draft
+' Emails (only if Settings!B16 = "Yes") -> Run Log entry.
 '
 ' Pass csvPath to skip the file picker (used for unattended/automated
 ' runs); the Control-sheet button calls this with no argument, so a live
@@ -56,13 +56,9 @@ Public Sub RunDailyReport(Optional ByVal csvPath As String = "", Optional ByVal 
     Application.Calculation = xlCalculationAutomatic
     Application.Calculate
 
-    ' 3. Pivots
-    currentStep = "BuildPivots"
-    BuildPivots
-
-    ' 4. Summary
-    currentStep = "BuildSummary"
-    BuildSummary
+    ' 3. Dashboard (charts + KPI top-region value)
+    currentStep = "BuildDashboard"
+    BuildDashboard
 
     ' 5. Export dated report
     currentStep = "ExportReport"
