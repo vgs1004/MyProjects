@@ -1,6 +1,6 @@
 # Project Portfolio | Varshini Gayathri Suresh
 
-Business analysis, PMO and data analytics projects in Power BI, SQL, Excel and Python. All data is public, synthetic, or anonymised. No employer or client data is published.
+Business analysis, PMO and data analytics projects in Power BI, Tableau, SQL, Excel and Python. All data is public, synthetic, or anonymised. No employer or client data is published.
 
 LinkedIn: [linkedin.com/in/vgs1004](https://www.linkedin.com/in/vgs1004)
 
@@ -17,7 +17,7 @@ LinkedIn: [linkedin.com/in/vgs1004](https://www.linkedin.com/in/vgs1004)
 
 | Project | What it shows |
 |---|---|
-| [E-Commerce Pricing and Partner Analytics](https://github.com/vgs1004/ecommerce-supply-partner-pricing-analytics) | Three-layer SQL pipeline in Databricks on about 100,000 orders, feeding a Tableau dashboard |
+| [E-Commerce Pricing and Partner Analytics](E-Commerce%20Pricing%20and%20Partner%20Analytics%20%28SQL%2C%20Tableau%29/) | Three-layer SQL pipeline in Databricks on about 100,000 Olist orders, feeding a Tableau dashboard on seller delivery performance and price positioning (LOD expressions, context filters) |
 
 ## Python and Machine Learning
 
