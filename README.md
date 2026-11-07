@@ -18,7 +18,7 @@ Business analysis, PMO and data analytics projects in Power BI, Tableau, SQL, Ex
 
 | Project | What it shows |
 |---|---|
-| [Project Financial and Portfolio Tracker](Project%20Financial%20and%20Portfolio%20Tracker%20%28Excel%29/) | Budget against actual, RAG status and resource utilization across 14 projects, PivotTable dashboard with slicers |
+| [Project Financial and Portfolio Tracker](Project%20Financial%20and%20Portfolio%20Tracker%20%28Excel%29/) | Budget against actual, RAG status and resource utilisation across 14 projects, PivotTable dashboard with slicers |
 | [SLA and Support Ticket Tracker](SLA%20and%20Support%20Ticket%20Tracker%20%28Excel%29/) | Automatic SLA breach calculation for 180 tickets across P1 to P4 and L1 to L3, PivotTable dashboard |
 | [RAID Log and Portfolio Review Tracker](RAID%20Log%20and%20Portfolio%20Review%20Tracker%20%28Excel%29/) | 55-item RAID log with impact scoring and a review view of high-impact open items |
 | [Agile Sprint Tracker](Agile%20Sprint%20Tracker%20%28Excel%29/) | MoSCoW backlog of 25 user stories, burndown, velocity, retrospective log and VBA macros |
