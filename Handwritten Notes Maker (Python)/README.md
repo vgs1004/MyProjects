@@ -17,11 +17,7 @@ Full write-up: [Learning Log #1 on my website](https://vgs1004.github.io/blog/20
 
 I gave Claude the same long prompt for every topic ([prompt.txt](Method%201%20%28One%20Long%20Prompt%29/prompt.txt)). It asks Claude to check official documentation, teach the topic from zero, and make a PDF that looks like handwritten notes in a spiral notebook, using as many pages as needed.
 
-Claude researches, writes, designs and builds the PDF, all in one go. The result can look great ([SQL notes, 25 pages](Method%201%20%28One%20Long%20Prompt%29/SQL%20Notes%20%28Method%201%29.pdf)), but:
-
-- **Every topic repeats the whole job**, including the design work, so it uses a lot of tokens.
-- **Any fix means another full run.**
-- **The look changes from topic to topic.**
+Claude researches, writes, designs and builds the PDF, all in one go ([SQL notes, 25 pages](Method%201%20%28One%20Long%20Prompt%29/SQL%20Notes%20%28Method%201%29.pdf)). It works well for a single guide, but Claude builds the layout each time, and any layout fix means another round in Claude.
 
 <img src="images/method1-sample-page.jpg" alt="A page from the Method 1 SQL notes" width="420">
 
@@ -32,6 +28,22 @@ Claude researches, writes, designs and builds the PDF, all in one go. The result
 3. **The notebook builds the PDF on my laptop:** Markdown to HTML (HTML lines the text up properly), then HTML to PDF. Free, and the same look every time.
 
 Result: [n8n notes, 42 pages](Method%202%20%28Python%20Notebook%29/n8n%20Notes%20%28Method%202%29.pdf).
+
+**Why I prefer it:** alignment is handled for me, layout edits are free (change a setting and re-run), every guide looks the same, and Claude's effort goes into the content.
+
+## Average tokens per guide (estimate)
+
+For a 20-page guide with the same research and roughly the same amount of text. Planning averages, not measured usage.
+
+| Work Claude does | Method 1 | Method 2 |
+|---|---:|---:|
+| Instructions (prompt, plus format guide in Method 2) | ~300 | ~2,200 |
+| Research and source reading | ~15,000 | ~15,000 |
+| Writing the guide | ~7,000 | ~8,000 |
+| Building the PDF, checking pages, fixing layout | ~10,000 | 0 (local Python) |
+| **Total** | **~32,000** | **~25,000** |
+
+About 20 to 30% fewer tokens per guide, and Claude writes about half as much.
 
 <img src="images/method2-sample-page.jpg" alt="A page from the Method 2 n8n notes" width="420">
 
