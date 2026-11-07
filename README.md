@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://www.linkedin.com/in/vgs1004"><img alt="LinkedIn" src="https://img.shields.io/badge/LinkedIn-5371D1?style=for-the-badge&logo=linkedin&logoColor=FFFFFF" /></a>
   <img alt="Aachen, Germany" src="https://img.shields.io/badge/Aachen,_Germany-E88F30?style=for-the-badge&logo=googlemaps&logoColor=3A1E4A" />
-  <img alt="11 projects" src="https://img.shields.io/badge/11_projects-E0527F?style=for-the-badge&logoColor=FFFFFF" />
+  <img alt="12 projects" src="https://img.shields.io/badge/12_projects-E0527F?style=for-the-badge&logoColor=FFFFFF" />
 </p>
 
 Business analysis, PMO and data analytics projects in Power BI, Tableau, SQL, Excel and Python. All data is public, synthetic, or anonymised. No employer or client data is published.
@@ -38,6 +38,7 @@ Business analysis, PMO and data analytics projects in Power BI, Tableau, SQL, Ex
 | [Comment Category Prediction](Comment%20Category%20Prediction%20%28Python%29/) | Kaggle competition, stacked ensemble (Logistic Regression, LightGBM, Naive Bayes, MLP), 0.80+ macro F1 |
 | [Penalty Kick Target Prediction](Penalty%20Kick%20Target%20Prediction%20%28Python%29/) | Team project, discrete choice models in Biogeme on 2,358 penalty kicks, Streamlit app |
 | [Green Capital and Economic Growth](Green%20Capital%20and%20Economic%20Growth%20%28Python%29/) | Team project, Cobb-Douglas analysis of natural capital in Germany and Brazil, World Bank data |
+| [Handwritten Notes Maker](Handwritten%20Notes%20Maker%20%28Python%29/) | Turns Markdown into a hand-drawn notebook PDF; Claude writes only the content, Python draws the look (see [Learning Log #1](https://vgs1004.github.io/blog/2026/11/learning-log-01-handwritten-notes/)) |
 | [Concrete Compressive Strength Prediction](Concrete%20Compressive%20Strength%20Prediction%20%28Python%29/) | Linear, polynomial, ridge and lasso regression with cross-validation |
 
 Each folder has its own README with the data source and steps to run it.

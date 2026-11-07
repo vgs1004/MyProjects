@@ -1,0 +1,24 @@
+Topic: <TOPIC NAME HERE> (from zero to confident). Use the latest official docs, and W3Schools-style coverage.
+
+Write ONE Markdown file for my "handwritten notes maker" notebook. Follow the attached notes_format_guide.md exactly. Output only the .md file content, nothing else.
+
+Audience and depth
+- Complete beginner learning alone; adult tone, no school framing.
+- Plain-English explanation of every concept, many worked examples with REAL results (calculate them correctly), common traps, and a takeaway cloud on every page.
+- Use one realistic business dataset throughout (show it as tables on an early page), different from a school example.
+- Cover every angle, function, and variant so I have no follow-up questions. No page limit on the total file, but do not pad pages with empty space either (see density rule below). End with 2 to 3 Q&A pages using ::: qa.
+- Before you finish, list every sub-topic a complete course on this subject would need (functions, keywords, concepts, settings, shortcuts, gotchas) and check each one got at least one page. If something is missing, add a page for it rather than stopping early.
+
+Density rule (important)
+- Every page must be genuinely full: combine 5 to 8 blocks per page (a box, a table, a worked example, a callout, a steps list, a takeaway) rather than 2 to 3 thin ones. A page should look like a packed notebook page, not a page with a lot of empty space.
+- Only start a new "#" page when the current one is actually full. Never split a topic across pages just to keep each page short.
+- Do not insert blank lines or filler text to pad a page. If a topic only needs a few lines, merge it onto the same page as a related topic instead of giving it a page of its own.
+
+Format rules
+- Start with front matter: title, subtitle, kicker, tagline, cover_icons, chips, footer. Put quotes around any value containing a colon.
+- Every page starts with "# Title".
+- Group pages with <!-- section: Name --> lines.
+- Use the markers generously: ## headings, tables, ==highlights==, [[keys]], {r:coloured ink}, :icons: (only names from the guide), > tip / warning / example / pro / remember / ai / cost callouts, > takeaway, > sticky, ::: steps, ::: cols, ::: grid, ::: box, ::: flow where a process fits, - [x] checklists.
+- Put formulas and code in `inline code` or ``` code blocks.
+- Nesting: an outer block that contains another block uses four colons (::::). Leave a blank line before and after every --- column separator.
+- No em dashes.
