@@ -1,34 +1,42 @@
-# Handwritten Notes Maker (Python)
+# Handwritten Notes Maker: two ways to make AI study notes
 
-Turns a plain Markdown file into a hand-drawn notebook PDF: spiral binding, wobbly ink boxes, highlighter, sticky notes, takeaway clouds and flow diagrams.
+![Before and now: two ways to make AI study notes](images/before-and-now.png)
 
-I built it by describing the design to Claude and testing it page by page. The idea is to **separate content from design**. Claude writes only the content, in Markdown. This notebook draws the notebook look locally, so styling costs zero AI tokens and every set of notes looks the same.
+Everyone shares those beautiful handwritten study notes. This folder holds the two ways I made mine for interview prep, and why I switched.
 
-Write-up: [Learning Log #1 on my website](https://vgs1004.github.io/blog/2026/11/learning-log-01-handwritten-notes/)
+Full write-up: [Learning Log #1 on my website](https://vgs1004.github.io/blog/2026/11/learning-log-01-handwritten-notes/)
 
-## Files
+## What's in this folder
 
-| File | What it is |
+| Folder | What it is |
 |---|---|
-| `handwritten_notes_maker.ipynb` | The notebook: setup, settings, fonts, doodle icons, style, Markdown parser and PDF builder |
-| `notes_format_guide.md` | Two-page guide to every marker the notebook understands. It is also a sample input |
-| `content_prompt.txt` | The prompt I give Claude to write the notes content (replace `<TOPIC NAME HERE>`) |
+| [Method 1 (One Long Prompt)](Method%201%20%28One%20Long%20Prompt%29/) | The single prompt I used for every topic, and the SQL notes it produced |
+| [Method 2 (Python Notebook)](Method%202%20%28Python%20Notebook%29/) | The notebook, its format guide, the content prompt, an installation guide, and the n8n notes it produced |
 
-## How to use
+## Method 1: one long prompt, Claude makes the whole PDF
 
-1. Put the notebook and your `.md` file in one folder.
-2. In cell 2 (Settings), set `INPUT_MD` and `OUTPUT_PDF`.
-3. Run all cells. The first run installs `markdown-it-py`, `mdit-py-plugins`, `beautifulsoup4`, `pyyaml` and `playwright` (with Chromium), and downloads the Kalam and Delius fonts. Later runs take seconds.
+I gave Claude the same long prompt for every topic ([prompt.txt](Method%201%20%28One%20Long%20Prompt%29/prompt.txt)). It asks Claude to check official documentation, teach the topic from zero, and make a PDF that looks like handwritten notes in a spiral notebook, using as many pages as needed.
 
-To make new notes: paste `content_prompt.txt` (with your topic) and `notes_format_guide.md` into Claude, save its answer as a `.md` file, and run the notebook.
+Claude researches, writes, designs and builds the PDF, all in one go. The result can look great ([SQL notes, 25 pages](Method%201%20%28One%20Long%20Prompt%29/SQL%20Notes%20%28Method%201%29.pdf)), but:
 
-## Markers at a glance
+- **Every topic repeats the whole job**, including the design work, so it uses a lot of tokens.
+- **Any fix means another full run.**
+- **The look changes from topic to topic.**
 
-| Write | Get |
-|---|---|
-| `# Title` | new page with a boxed title |
-| `## Heading` | section heading, inks rotate |
-| `==text==` · `[[Ctrl]]` · `{r:text}` · `:bulb:` | highlighter · key cap · coloured ink · doodle icon |
-| `> tip:` `> warning:` `> example:` | callout box |
-| `> takeaway:` · `> sticky:` | cloud · sticky note |
-| `::: cols` · `::: box` · `::: steps` · `::: flow` | columns · box · step cards · flow diagram |
+<img src="images/method1-sample-page.jpg" alt="A page from the Method 1 SQL notes" width="420">
+
+## Method 2: the design is fixed, Claude writes only the content
+
+1. **The design is fixed once** in a Python notebook: fonts, colours, layout.
+2. **Claude writes only the content**, in plain Markdown, using official docs as sources. This is the only step that uses tokens.
+3. **The notebook builds the PDF on my laptop:** Markdown to HTML (HTML lines the text up properly), then HTML to PDF. Free, and the same look every time.
+
+Result: [n8n notes, 42 pages](Method%202%20%28Python%20Notebook%29/n8n%20Notes%20%28Method%202%29.pdf).
+
+<img src="images/method2-sample-page.jpg" alt="A page from the Method 2 n8n notes" width="420">
+
+## What I learned
+
+- **Separate content from design**, like a template in Word or a theme in Power BI.
+- **Use the AI only where it adds value.** Writing the content needs Claude. Building the PDF doesn't.
+- **You don't need to be a developer.** I built the notebook by describing what I wanted to Claude and checking each page.

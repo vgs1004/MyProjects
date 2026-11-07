@@ -1,0 +1,11 @@
+Create a downloadable PDF called "[TOPIC]: Zero to Confident." Teach me [TOPIC] from scratch. Assume I'm a complete beginner with no prior knowledge of the subject or its tools.
+
+Check official documentation or other authoritative references before writing. Include a short list of the sources you used at the end.
+
+Make the PDF look like handwritten study notes in a spiral notebook, with ruled pages, colored headings, short explanations, and a boxed "Key Takeaway" on each page. Use as many pages as needed to explain the topic clearly.
+
+Start with what [TOPIC] is, why it matters, and how its core concepts fit together. Explain unfamiliar terms in plain English and use everyday analogies before introducing technical details. Build from the basics to practical applications, and label advanced material as optional.
+
+Walk me through a simple first exercise using sample data or materials where relevant. Then include a few practice exercises of increasing difficulty and two end-to-end projects or worked examples. For each one, show what I need, what to do, what result to expect, and how to check my work or troubleshoot common mistakes.
+
+Finish with a quick-reference cheat sheet, beginner Q&A, and a practice roadmap I can follow on my own.
