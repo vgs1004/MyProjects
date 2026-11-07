@@ -45,7 +45,7 @@ For a 20-page guide with the same research and roughly the same amount of text. 
 
 About 20 to 30% fewer tokens per guide, and Claude writes about half as much.
 
-<img src="images/method2-sample-page.jpg" alt="A page from the Method 2 n8n notes" width="420">
+<img src="images/method2-sample-page-v2.jpg" alt="A page from the Method 2 n8n notes" width="420">
 
 ## What I learned
 
