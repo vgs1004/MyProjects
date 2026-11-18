@@ -1,7 +1,9 @@
 """Turn a meeting transcript into decisions, action items and open questions.
 
-Everything runs on this computer: the transcript goes to Ollama on localhost,
-never to a cloud service.
+Everything runs on this computer. Two engines, both local and free:
+- "built-in": llama-cpp-python runs the model inside Python. Nothing else to install.
+- "ollama": uses the Ollama app, if you already have it.
+The transcript never goes to a cloud service.
 """
 
 import difflib
@@ -14,7 +16,16 @@ import pandas as pd
 import requests
 
 DEFAULT_HOST = "http://localhost:11434"
-DEFAULT_MODEL = "llama3.1:8b"
+DEFAULT_MODEL = "llama3.1:8b"  # for Ollama
+
+# Built-in engine: free models from Hugging Face, downloaded once, then used offline.
+BUILTIN_MODELS = {
+    "Qwen 2.5 3B (recommended, about 2 GB)": ("Qwen/Qwen2.5-3B-Instruct-GGUF", "*q4_k_m.gguf"),
+    "Qwen 2.5 1.5B (faster, about 1 GB, less accurate)": ("Qwen/Qwen2.5-1.5B-Instruct-GGUF", "*q4_k_m.gguf"),
+    "Qwen 2.5 7B (most accurate, about 4.7 GB, needs 16 GB RAM)": ("bartowski/Qwen2.5-7B-Instruct-GGUF", "*Q4_K_M.gguf"),
+}
+DEFAULT_BUILTIN = next(iter(BUILTIN_MODELS))
+_loaded = {}  # keep the built-in model in memory between runs
 NOT_STATED = "Not stated"
 
 # The model must answer in exactly this shape (Ollama "structured outputs").
@@ -94,17 +105,20 @@ def list_models(host: str = DEFAULT_HOST) -> list[str]:
     return sorted(m["name"] for m in r.json().get("models", []))
 
 
-def extract(transcript: str, model: str = DEFAULT_MODEL, host: str = DEFAULT_HOST) -> dict:
-    """Ask the local model for the minutes and return them as a dict."""
+def _messages(transcript: str) -> list[dict]:
     if not transcript.strip():
         raise ValueError("The transcript is empty.")
+    return [
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user", "content": f"Transcript:\n\n{transcript}"},
+    ]
+
+
+def _ollama_chat(transcript: str, model: str, host: str) -> str:
     payload = {
         "model": model,
-        "messages": [
-            {"role": "system", "content": SYSTEM_PROMPT},
-            {"role": "user", "content": f"Transcript:\n\n{transcript}"},
-        ],
-        "format": SCHEMA,
+        "messages": _messages(transcript),
+        "format": SCHEMA,  # the model must answer in this JSON shape
         "stream": False,
         # temperature 0: the same transcript gives (almost) the same answer each time.
         # num_ctx: room for about an hour of meeting text.
@@ -112,7 +126,36 @@ def extract(transcript: str, model: str = DEFAULT_MODEL, host: str = DEFAULT_HOS
     }
     r = requests.post(f"{host}/api/chat", json=payload, timeout=600)
     r.raise_for_status()
-    content = r.json()["message"]["content"]
+    return r.json()["message"]["content"]
+
+
+def load_builtin(name: str = DEFAULT_BUILTIN):
+    """Load a built-in model. The first time, this downloads it (1 to 5 GB)."""
+    if name not in _loaded:
+        from llama_cpp import Llama  # imported here so the Ollama engine works without it
+        repo, filename = BUILTIN_MODELS[name]
+        _loaded[name] = Llama.from_pretrained(repo_id=repo, filename=filename, n_ctx=16384, verbose=False)
+    return _loaded[name]
+
+
+def _builtin_chat(transcript: str, name: str) -> str:
+    llm = load_builtin(name)
+    out = llm.create_chat_completion(
+        messages=_messages(transcript),
+        response_format={"type": "json_object", "schema": SCHEMA},
+        temperature=0,
+        max_tokens=4096,
+    )
+    return out["choices"][0]["message"]["content"]
+
+
+def extract(transcript: str, engine: str = "built-in", model: str = DEFAULT_BUILTIN,
+            host: str = DEFAULT_HOST) -> dict:
+    """Ask the local model for the minutes and return them as a dict."""
+    if engine == "ollama":
+        content = _ollama_chat(transcript, model, host)
+    else:
+        content = _builtin_chat(transcript, model)
     result = json.loads(content)
     for key in ("decisions", "action_items", "open_questions"):
         result.setdefault(key, [])
@@ -176,17 +219,9 @@ def tables(result: dict) -> dict[str, pd.DataFrame]:
     return out
 
 
-def to_excel(result: dict, title: str = "Meeting") -> bytes:
-    buf = io.BytesIO()
-    with pd.ExcelWriter(buf, engine="openpyxl") as xl:
-        pd.DataFrame({"Meeting": [title], "Summary": [result["summary"]]}).to_excel(xl, sheet_name="Summary", index=False)
-        for name, df in tables(result).items():
-            df.to_excel(xl, sheet_name=name, index=False)
-        for ws in xl.book.worksheets:
-            for col in ws.columns:
-                width = max(len(str(c.value or "")) for c in col)
-                ws.column_dimensions[col[0].column_letter].width = min(max(12, width + 2), 60)
-    return buf.getvalue()
+def to_excel(result: dict, title: str = "Meeting", meeting_date: str = "") -> bytes:
+    from excel_report import build_workbook
+    return build_workbook(result, title, meeting_date)
 
 
 def to_markdown(result: dict, title: str = "Meeting") -> str:
