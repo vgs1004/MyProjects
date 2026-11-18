@@ -1,0 +1,27 @@
+Weekly project sync: Customer Portal release 2.4
+Invented example meeting. All names and details are made up.
+
+[10:00] Lena Hoffmann: Morning everyone. Three things today: the release date, the login bug, and the training for the support team.
+[10:01] Tom Becker: Quick update from dev. The password reset bug is fixed on the test server, but the login timeout issue is still open. I think we need two more days.
+[10:02] Lena Hoffmann: So the 28th is not realistic anymore?
+[10:02] Tom Becker: Not with the timeout issue open, no.
+[10:03] Priya Nair: From QA side, if Tom gives us the build by Wednesday, we can finish regression testing by Friday.
+[10:04] Lena Hoffmann: Okay. Then let's agree: we move the release from the 28th to December 3rd. Everyone fine with that?
+[10:04] Tom Becker: Yes.
+[10:04] Priya Nair: Yes, that works.
+[10:05] Lena Hoffmann: Good, decided. Tom, can you fix the timeout issue and send Priya the build by Wednesday?
+[10:05] Tom Becker: Will do.
+[10:06] Priya Nair: I'll update the test plan with the new date today and share it in the channel.
+[10:07] Lena Hoffmann: Second point, the client. Someone needs to tell Müller GmbH about the new date before they hear it from their own users.
+[10:07] Markus Klein: I can draft the email, but I'm out from Thursday.
+[10:08] Lena Hoffmann: Then draft it, and I'll send it. Actually no, Markus, just send it yourself tomorrow, you know them best.
+[10:08] Markus Klein: Fine, I'll send it tomorrow morning.
+[10:09] Priya Nair: Do we know if the client wants the new reporting page in this release or the next one?
+[10:09] Lena Hoffmann: Good question. I don't know. Let's park that.
+[10:10] Lena Hoffmann: Last point, training. The support team needs a walkthrough of the new features before go-live.
+[10:11] Tom Becker: We should probably record a short video for them.
+[10:11] Lena Hoffmann: Yes, maybe. Let's see who has time.
+[10:12] Markus Klein: Also, are we still using the old FAQ page or is someone updating it?
+[10:12] Lena Hoffmann: Not sure. I'll check with the content team and come back by end of week.
+[10:13] Lena Hoffmann: One more thing, the budget for the extra testing days. That's a risk, I'll raise it in the steering committee on Monday.
+[10:14] Lena Hoffmann: Okay, thanks all. Same time next week.

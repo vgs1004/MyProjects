@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Privacy: this page may not connect to any server. It only runs its own code and reads your files. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'unsafe-inline'; img-src data: blob:; connect-src data: blob:; font-src data:; worker-src blob:; base-uri 'none'; form-action 'none'">
+<title>Meeting Notes Studio</title>
+<style>/*APP_CSS*/</style>
+</head>
+<body>
+<header class="app-header">
+  <div class="brand"><i>✎</i>Meeting Notes Studio</div>
+  <span class="privacy" title="This file has no server. A security rule inside it blocks all network connections.">🔒 Works offline · nothing leaves this computer</span>
+  <nav class="steps">
+    <button data-step="input"><b>1</b>Transcript</button>
+    <button data-step="review"><b>2</b>Check points</button>
+    <button data-step="export"><b>3</b>Design and export</button>
+  </nav>
+  <button class="ghost-light" id="reset">Start over</button>
+</header>
+
+<main>
+  <!-- STEP 1 -->
+  <section class="view" id="v-input">
+    <h2 class="title">Add what was discussed</h2>
+    <p class="lead">Paste a transcript or rough notes, or drop a Teams or Zoom transcript file. Nothing is uploaded: this page works offline.</p>
+    <div class="card">
+      <div class="drop" id="drop">Drop a file here or <label>browse<input type="file" id="file" accept=".txt,.vtt,.docx,.md,.srt" hidden></label> · .txt, .vtt, .docx, .md</div>
+      <textarea id="transcript" class="t" placeholder="Paste a transcript, for example:
+Lena: Let's agree to move the release to 3 December.
+Tom: I'll fix the timeout bug by Wednesday.
+
+or rough notes:
+- Ben to update the media plan by Friday
+- Decision: launch the landing page on 1 Dec
+- Open question: do we need legal review?"></textarea>
+      <div class="row" style="margin-top:12px">
+        <button class="btn primary" id="go">Find actions and decisions →</button>
+        <span class="note">or try a sample:</span>
+        <div class="chips row" id="samples"></div>
+      </div>
+      <details class="ai">
+        <summary>Optional: let your company's approved AI write the first draft</summary>
+        <p class="note">If your company allows an AI assistant (for example Microsoft 365 Copilot), it can draft the points. Copy the prompt with your transcript, paste it into that assistant, then paste its answer below. You still check everything in the next step.</p>
+        <div class="row"><button class="btn small" id="copyPrompt">Copy prompt + transcript</button></div>
+        <textarea id="aiAnswer" class="t" rows="5" style="margin-top:8px" placeholder="Paste the AI's answer here (it starts with { )"></textarea>
+        <div class="row" style="margin-top:8px"><button class="btn small dark" id="useAi">Use this answer →</button></div>
+      </details>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="view" id="v-review">
+    <div class="rv-top">
+      <div style="flex:2;min-width:300px">
+        <h2 class="title">Check every point</h2>
+        <p class="lead">This is a first draft made by rules, not by a person. Edit anything, tick each point once it's right. Amber notes show what to look at; pink chips are grammar fixes you can click.</p>
+      </div>
+      <div class="progress card">
+        <b id="progTxt"></b>
+        <div class="bar"><i id="progBar"></i></div>
+        <div class="row" style="margin-top:8px"><button class="btn small" id="tickAll">Tick all without notes</button><span class="note" id="gramState">Grammar check: starting…</span></div>
+      </div>
+    </div>
+    <div class="rv-layout">
+      <div>
+        <div class="chips row" id="filters"></div>
+        <div class="card" style="margin-top:12px;padding:12px 16px">
+          <label class="f" style="margin-top:0">Summary (edit freely)</label>
+          <textarea id="summary" class="t" rows="3"></textarea>
+        </div>
+        <div id="items"></div>
+        <datalist id="people"></datalist>
+      </div>
+      <aside class="side">
+        <div class="card">
+          <button class="btn primary" id="toExport" style="width:100%">Choose a design →</button>
+          <h3 style="margin:16px 0 0;font-size:15px">Meeting details</h3>
+          <div id="meta"></div>
+          <label class="f">English for the grammar check</label>
+          <select id="dialect" class="t"><option value="British">British English</option><option value="American">American English</option></select>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="view" id="v-export">
+    <h2 class="title">Pick a design and export</h2>
+    <p class="lead">12 designs. Each shows your checked points. Export as PDF, an Excel tracker, a Word file, or copy straight into an email.</p>
+    <div class="ex-layout">
+      <div class="gallery" id="gallery"></div>
+      <div>
+        <div id="warnbar"></div>
+        <div class="toolbar">
+          <b id="tplName"></b><span class="spacer"></span>
+          <button class="btn primary" id="xPdf">PDF</button>
+          <button class="btn dark" id="xXlsx">Excel tracker</button>
+          <button class="btn" id="xDoc">Word</button>
+          <button class="btn" id="xMail">Copy for email</button>
+        </div>
+        <div class="stage" id="stage"><div class="stage-inner" id="preview"></div></div>
+        <p class="note">PDF opens your browser's print window: choose "Save as PDF" and turn on "Background graphics". The Excel tracker has a Status dropdown, and its Overview updates when actions are marked Done.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="print-root"></div>
+<div class="toast" id="toast"></div>
+
+<script type="text/plain" id="harper-wasm">/*HARPER_WASM_B64*/</script>
+<script>/*EXCELJS*/</script>
+<script>/*HARPER_BUNDLE*/</script>
+<script>/*ENGINE*/</script>
+<script>/*TEMPLATES*/</script>
+<script>/*EXPORTERS*/</script>
+<script>/*SAMPLES*/</script>
+<script>/*APP*/</script>
+</body>
+</html>
